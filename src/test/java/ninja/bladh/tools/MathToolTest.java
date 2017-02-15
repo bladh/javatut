@@ -6,7 +6,7 @@ import org.junit.Test;
 public class MathToolTest {
 
     private static final int[] integers = {2, 6, 2, 3, 7, 2, 7, 9, 3, 5, 0, 5, 3, 36, 994, 34, 5};
-    private static final int[] floors = {2, 2, 2, 3, 2, 2, 7, 3, 3, 0, 0, 3, 3, 36, 34};
+    private static final int[] floors = {2, 2, 2, 3, 2, 2, 7, 3, 3, 0, 0, 3, 3, 36, 34, 5};
     private static final int[] ceilings = {6, 6, 3, 7, 7, 7, 9, 9, 5, 5, 5, 5, 36, 994, 994, 34};
 
     @Test
@@ -35,7 +35,7 @@ public class MathToolTest {
             int a = integers[i - 1];
             int b = integers[i];
             int result = MathTool.floor(a, b);
-            Assert.assertEquals("Trying to floor " + a + " and " + b + " is not producing the expected value", floors[i], result);
+            Assert.assertEquals("Trying to floor " + a + " and " + b + " is not producing the expected value", floors[i - 1], result);
         }
     }
 
@@ -45,7 +45,7 @@ public class MathToolTest {
             int a = integers[i - 1];
             int b = integers[i];
             int result = MathTool.ceiling(a, b);
-            Assert.assertEquals("Trying to ceiling " + a + " and " + b + " is not producing the expected value", ceilings[i], result);
+            Assert.assertEquals("Trying to ceiling " + a + " and " + b + " is not producing the expected value", ceilings[i - 1], result);
         }
     }
 }
